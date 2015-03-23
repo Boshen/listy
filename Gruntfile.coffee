@@ -10,13 +10,13 @@ module.exports = (grunt) ->
         files: [
           'app/styles/**/*.scss'
         ]
-        tasks: ['compass']
+        tasks: ['compass:server']
 
     browserSync:
       dev:
         bsFiles:
           src: [
-            'app/styles/**/*.css'
+            '.tmp/styles/main.css'
             'app/scripts/**/*.js'
           ]
         options:
@@ -30,18 +30,44 @@ module.exports = (grunt) ->
           watchTask: true
           ghostMode: false
           server:
-            baseDir: ['app']
+            baseDir: ['app', '.tmp']
 
     compass:
       options:
-        sassDir: 'app/styles/'
-        cssDir: 'app/styles/'
-      dev: {}
+        sassDir: 'app/styles'
+        relativeAssets: true
+      dist:
+        options:
+          cssDir: 'dist/styles'
+      server:
+        options:
+          cssDir: '.tmp/styles'
+          debugInfo: true
+          relativeAssets: false
+
+    copy:
+      all:
+        files: [
+          {
+            expand: true
+            cwd: 'app'
+            dest: 'dist'
+            src: [
+              '**/*.js'
+              'index.html'
+            ]
+          }
+        ]
 
   grunt.registerTask 'server', [
-    'compass'
+    'compass:server'
     'browserSync'
     'watch'
+  ]
+
+  grunt.registerTask 'build', [
+    'compass:dist'
+    'copy'
   ]
 
   grunt.registerTask 'default', ['server']
