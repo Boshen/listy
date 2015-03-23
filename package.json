@@ -1,0 +1,23 @@
+{
+  "name": "listy",
+  "version": "0.0.0",
+  "author": "Boshen",
+  "private": true,
+  "description": "",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Boshen/listy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Boshen/listy/issues"
+  },
+  "homepage": "https://github.com/Boshen/listy",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.1.1",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "jit-grunt": "^0.9.1"
+  }
+}
