@@ -18,6 +18,7 @@ module.exports = (grunt) ->
           src: [
             '.tmp/styles/main.css'
             'app/scripts/**/*.js'
+            'app/**/*.html'
           ]
         options:
           logFileChanges: false
