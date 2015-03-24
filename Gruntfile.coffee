@@ -10,7 +10,7 @@ module.exports = (grunt) ->
         files: [
           'app/styles/**/*.scss'
         ]
-        tasks: ['compass:server']
+        tasks: ['compass:server', 'autoprefixer:server']
 
     browserSync:
       dev:
@@ -36,14 +36,30 @@ module.exports = (grunt) ->
       options:
         sassDir: 'app/styles'
         relativeAssets: true
-      dist:
-        options:
-          cssDir: 'dist/styles'
+        cssDir: '.tmp/styles'
+      dist: {}
       server:
         options:
-          cssDir: '.tmp/styles'
           debugInfo: true
           relativeAssets: false
+
+    autoprefixer:
+      options:
+        browsers: ['last 5 versions', 'ie >= 10', 'Firefox >= 31', 'Firefox ESR', 'Safari >= 7']
+      dist:
+        files: [{
+          expand: true
+          cwd: '.tmp/styles/'
+          src: 'main.css'
+          dest: 'dist/styles/'
+        }]
+      server:
+        files: [{
+          expand: true
+          cwd: '.tmp/styles/'
+          src: 'main.css'
+          dest: '.tmp/styles/'
+        }]
 
     copy:
       all:
@@ -61,12 +77,14 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'server', [
     'compass:server'
+    'autoprefixer:server'
     'browserSync'
     'watch'
   ]
 
   grunt.registerTask 'build', [
     'compass:dist'
+    'autoprefixer:dist'
     'copy'
   ]
 

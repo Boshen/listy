@@ -26,9 +26,7 @@
 	font-weight: 300;
 	font-size: 28px;
 	box-sizing: border-box;
-     -webkit-box-sizing:border-box;
-     -moz-box-sizing: border-box;
-	
+
 	&::-webkit-input-placeholder {
 		font-family: 'Ubuntu', 'Arial', sans-serif;
 		font-weight: 300;
@@ -50,7 +48,7 @@
 		color: #E6E6E6;
 	}
 
-	&:-ms-input-placeholder {  
+	&:-ms-input-placeholder {
 		font-family: 'Ubuntu', 'Arial', sans-serif;
 		font-weight: 300;
 		font-size: 28px;
