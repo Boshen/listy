@@ -18,13 +18,13 @@
       <a>Hey Boshen</a>
     </div>
   </nav>
-  <main class="container" ng-controller="ListyCtrl">
-    <section>
+  <main class="container todo-main" ng-controller="ListyCtrl">
+    <section class="todo-section">
       <ul>
         <li class="todo-input-area">
           <form ng-submit="addTodo(newTodo.text)">
             <div class="list-input">
-              <input ng-model="newTodo.text"></input>
+              <input placeholder='I need to...' ng-model="newTodo.text">I need to...</input>
             </div> 
           </form>
         </li>
