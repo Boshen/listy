@@ -19,6 +19,7 @@ module.exports = (grunt) ->
             '.tmp/styles/main.css'
             'app/scripts/**/*.js'
             'app/**/*.html'
+            'app/**/*.png'
           ]
         options:
           logFileChanges: false
@@ -64,17 +65,16 @@ module.exports = (grunt) ->
 
     copy:
       all:
-        files: [
-          {
+        files: [{
             expand: true
             cwd: 'app'
             dest: 'dist'
             src: [
               '**/*.js'
+              '**/*.png'
               'index.html'
             ]
-          }
-        ]
+        }]
 
   grunt.registerTask 'server', [
     'compass:server'

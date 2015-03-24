@@ -1,17 +1,17 @@
 nav {
-	background-color: $listy-main;
-	height:4rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px;
+  background-color: $listy-main;
+  height:4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 
-	.header-logo {
-		height: 40px;
-	}
+  .header-logo {
+    height: 40px;
+  }
 
-	.header-login {
-		color: #fff;
-	}
+  .header-login {
+    color: #fff;
+  }
 
 }
