@@ -12,29 +12,30 @@
   </head>
 
   <body>
-  <nav>
-    <img class="header-logo" src="images/logo.png" />
-    <div class="header-login">
-      <a>Hey Boshen</a>
-    </div>
-  </nav>
-  <main class="container todo-main" ng-controller="ListyCtrl">
-    <section class="todo-section">
-      <ul>
-        <li class="todo-input-area">
-          <form ng-submit="addTodo(newTodo.text)">
-            <div class="list-input">
-              <input placeholder='I need to...' ng-model="newTodo.text"></input>
-            </div> 
-          </form>
-        </li>
-        <li class="todo-text-area" ng-repeat="todo in todos track by todo.$id">
-          <input ng-model="todo.text" ng-change="todos.$save(todo)"></input>
-          <span ng-click="todos.$remove(todo)">x</span>
-        </li>
-      </ul>
-    </section>
-  </main>
+    <nav>
+      <img class="header-logo" src="images/logo.png" />
+      <div class="header-login">
+        <a>Hey Boshen</a>
+      </div>
+    </nav>
+
+    <main class="container todo-main" ng-controller="ListyCtrl">
+      <section class="todo-section">
+        <ul>
+          <li class="todo-input-area">
+            <form ng-submit="addTodo(newTodo.text)">
+              <div class="list-input">
+                <input placeholder='I need to...' ng-model="newTodo.text"></input>
+              </div>
+            </form>
+          </li>
+          <li class="todo-text-area" ng-repeat="todo in todos track by todo.$id">
+            <span> {{todo.text}} </span>
+            <span ng-click="todos.$remove(todo)">x</span>
+          </li>
+        </ul>
+      </section>
+    </main>
 
     <script src="app.js"></script>
 
