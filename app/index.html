@@ -30,8 +30,10 @@
             </form>
           </li>
           <li class="todo-text-area" ng-repeat="todo in todos track by todo.$id">
-            <span class="todo-item"> {{todo.text}} </span>
-            <span class="todo-delete" ng-click="todos.$remove(todo)">x</span>
+            <div class="todo-text-container">
+              <span class="todo-item"> {{todo.text}} </span>
+              <span class="todo-delete" ng-click="todos.$remove(todo)"></span>
+            </div>
           </li>
         </ul>
       </section>

@@ -13,7 +13,7 @@
 
 .list-input {
 	padding:20px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 
 	input {
 	width: 100%;
@@ -75,7 +75,28 @@
 }
 
 .todo-text-area {
-	padding: 20px;
+	
+	.todo-text-container {
+		display: flex;
+		align-items: center;
+		padding: 20px;
+	}
+
+	.todo-item {
+		font-weight: 700;
+		color: #858585;
+		font-size: 35px;
+		width: 90%;
+	}
 
 
+	.todo-delete {
+		background: url('/images/icon-close.png') no-repeat center center transparent;
+		background-size: 20px 20px;
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		width: 10%;
+		cursor: pointer;
+	}
 }
