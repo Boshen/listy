@@ -1,0 +1,17 @@
+nav {
+	background-color: #2EBF9F;
+	height:4rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+
+	.header-logo {
+		height: 40px;
+	}
+
+	.header-login {
+		color: #fff;
+	}
+
+}
