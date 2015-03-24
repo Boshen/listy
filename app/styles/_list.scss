@@ -5,6 +5,10 @@
 .todo-section {
 	display: flex;
 	margin-top: 100px;
+
+	ul {
+		width: 100%;
+	}
 }
 
 .list-input {
@@ -17,7 +21,41 @@
 	border-radius: 6px;
 	border: 4px solid #E6E6E6;
 	font-size: 22px;
+	font-family: 'Ubuntu', 'Arial', sans-serif;
+	font-weight: 300;
+	font-size: 28px;
+	box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
 	
+	&::-webkit-input-placeholder {
+		font-family: 'Ubuntu', 'Arial', sans-serif;
+		font-weight: 300;
+		font-size: 28px;
+		color: #E6E6E6;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+		font-family: 'Ubuntu', 'Arial', sans-serif;
+		font-weight: 300;
+		font-size: 28px;
+		color: #E6E6E6;
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+		font-family: 'Ubuntu', 'Arial', sans-serif;
+		font-weight: 300;
+		font-size: 28px;
+		color: #E6E6E6;
+	}
+
+	&:-ms-input-placeholder {  
+		font-family: 'Ubuntu', 'Arial', sans-serif;
+		font-weight: 300;
+		font-size: 28px;
+		color: #E6E6E6;
+	}
+
 	&:hover, &:focus {
 		border: 4px solid $listy-main;
 	}
