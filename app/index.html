@@ -11,19 +11,23 @@
     <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="ListyCtrl">
     <nav>
       <img class="header-logo" src="images/logo.png" />
-      <div class="header-login">
-        <a>Hey Boshen</a>
+      <div class="header-login" ng-if="authData">
+        <a>{{authData.google.displayName}}</a>
+        <button ng-click="logout()">Logout</button>
+      </div>
+      <div class="header-login" ng-if="!authData">
+        <button ng-click="login()">Login</button>
       </div>
     </nav>
 
-    <main class="todo-main" ng-controller="ListyCtrl">
+    <main class="todo-main" ng-if="authData">
       <section class="todo-section">
         <ul>
           <li class="todo-input-area">
-            <form ng-submit="addTodo(newTodo.text)">
+            <form ng-submit="addTodo()">
               <div class="list-input">
                 <input placeholder='I need to...' ng-model="newTodo.text"></input>
               </div>

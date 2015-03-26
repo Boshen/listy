@@ -17,7 +17,7 @@ module.exports = (grunt) ->
         bsFiles:
           src: [
             '.tmp/styles/main.css'
-            'app/scripts/**/*.js'
+            'app/**/*.js'
             'app/**/*.html'
             'app/**/*.png'
           ]
