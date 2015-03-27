@@ -1,6 +1,6 @@
 (function(){
 
-  angular.module('listy', ['firebase'])
+  angular.module('listy', ['firebase', 'monospaced.elastic'])
 
     .controller('ListyCtrl', function($scope, $firebaseArray) {
 
