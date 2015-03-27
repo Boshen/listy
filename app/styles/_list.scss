@@ -103,6 +103,8 @@ html {
   .checked {
     background-color: $listy-main;
     border-color: $listy-main;
+    background: url('/images/tick.png') no-repeat center center $listy-main;
+    background-size: 16px 13px;
   }
 
   .todo-delete {
