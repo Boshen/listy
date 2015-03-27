@@ -25,6 +25,8 @@
         clearNewTodo();
       };
 
+      $scope.toggle = false;
+
       init();
 
     });
