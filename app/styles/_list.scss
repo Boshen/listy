@@ -111,6 +111,8 @@ html {
     background-size: 16px 13px;
   }
 
+
+
   .todo-delete {
     background: url('/images/icon-close.png') no-repeat center center transparent;
     background-size: 20px 20px;
@@ -126,3 +128,7 @@ textarea {
     resize: none;
     overflow: hidden;
 }
+
+.blue {
+    text-decoration: line-through;
+  }

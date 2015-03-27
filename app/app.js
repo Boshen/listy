@@ -26,6 +26,7 @@
       };
 
       $scope.toggle = false;
+      $scope.checked = false;
 
       init();
 
