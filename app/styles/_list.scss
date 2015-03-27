@@ -1,3 +1,10 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .todo-main {
   font-size: 18px;
   display: flex;
@@ -51,12 +58,29 @@
 }
 
 .todo-text-area {
+  padding: 20px;
 
   .todo-text-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    border: 4px solid $background-gray;
+    border-radius: 4px;
+
+    &:hover {
+      border: 4px solid #E4E4E4;
+      border-radius: 4px;
+      .todo-delete {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      border: 4px solid red;
+      border-radius: 4px; 
+    }
+
   }
 
   .todo-item {
@@ -64,12 +88,20 @@
     color: #858585;
     font-size: 35px;
     border: 0;
-    padding: 20px;
     background-color: $background-gray;
     flex: 1 1 auto;
-    &:focus {
+    outline: none;
+  
+    &:hover {
       outline: 0;
-    }
+    }    
+
+    /* &:focus {
+      outline: 0;
+      border: 4px solid #E4E4E4;
+      border-radius: 4px;
+    } */
+
   }
 
   .todo-delete {
@@ -78,6 +110,7 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
+    opacity: 0;
   }
 }
 
