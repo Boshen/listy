@@ -63,14 +63,10 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
     border: 4px solid $background-gray;
     border-radius: 4px;
 
     &:hover {
-      border: 4px solid #E4E4E4;
-      border-radius: 4px;
-      cursor: pointer;
       .todo-delete {
         opacity: 1;
       }
@@ -91,12 +87,6 @@ html {
     &:hover {
       outline: 0;
     }    
-
-    /* &:focus {
-      outline: 0;
-      border: 4px solid #E4E4E4;
-      border-radius: 4px;
-    } */
 
   }
   
