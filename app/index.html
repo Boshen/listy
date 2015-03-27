@@ -31,6 +31,7 @@
           </li>
           <li class="todo-text-area" ng-repeat="todo in todos track by todo.$id">
             <div class="todo-text-container">
+              <span class="todo-check" ng-click=""></span>
               <textarea msd-elastic rows="1" class="todo-item msd-elastic" ng-model="todo.text" ng-change="todos.$save(todo)"></textarea>
               <span class="todo-delete" ng-click="todos.$remove(todo)"></span>
             </div>
