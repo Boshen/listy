@@ -35,8 +35,13 @@
       $scope.logout = AuthFactory.logout;
 
       $scope.addTodo = function() {
-        $scope.todos.$add({text: $scope.newTodo.text});
+        $scope.todos.$add({text: $scope.newTodo.text, checked: false});
         clearNewTodo();
+      };
+
+      $scope.checkTodo = function(todo) {
+        todo.checked = !todo.checked;
+        $scope.todos.$save(todo);
       };
 
       $scope.displayName = function() {
@@ -63,9 +68,6 @@
           }
         });
       };
-
-      $scope.toggle = false;
-      $scope.checked = false;
 
       init();
 
