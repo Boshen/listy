@@ -32,12 +32,7 @@
         });
       };
 
-      $scope.logout = function() {
-        $scope.authData = null;
-        $scope.todos = null;
-        clearNewTodo();
-        AuthFactory.logout();
-      }
+      $scope.logout = AuthFactory.logout;
 
       $scope.addTodo = function() {
         $scope.todos.$add({text: $scope.newTodo.text});
@@ -54,6 +49,13 @@
           if (authData) {
             $scope.authData = authData;
             $scope.todos = new TodosService(AuthFactory.ref, authData.uid);
+          } else {
+            if ($scope.todos) {
+              $scope.todos.$destroy();
+            }
+            $scope.authData = null;
+            $scope.todos = null;
+            clearNewTodo();
           }
         });
       };
