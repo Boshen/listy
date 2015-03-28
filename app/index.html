@@ -13,7 +13,7 @@
   </head>
 
   <body ng-class="{ 'loginScreen': !authData  }" ng-controller="ListyCtrl">
-    
+
     <!-------- Login Screen -------->
     <div ng-if="!authData">
       <section class="home-screen">
@@ -27,7 +27,7 @@
     <nav ng-if="authData">
       <img class="header-logo" src="images/logo.png" />
       <div class="header-login" >
-        <a>Hello {{authData.google.displayName}}</a>
+        <a>Hello {{displayName()}}</a>
         <button class="logout" ng-click="logout()">Logout</button>
       </div>
     </nav>
@@ -55,7 +55,7 @@
 
     <script src="elastic.js"></script>
     <script src="app.js"></script>
-    
+
   </body>
 
 </html>

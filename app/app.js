@@ -39,6 +39,10 @@
         clearNewTodo();
       };
 
+      $scope.displayName = function() {
+        return $scope.authData.google.cachedUserProfile.given_name;
+      };
+
       function clearNewTodo() {
         $scope.newTodo = {text: ''};
       };
