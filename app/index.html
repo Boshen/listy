@@ -11,15 +11,23 @@
     <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
   </head>
 
-  <body ng-controller="ListyCtrl">
-    <nav>
-      <img class="header-logo" src="images/logo.png" />
-      <div class="header-login" ng-if="authData">
-        <a>Hello {{authData.google.displayName}}</a>
-        <button class="login" ng-click="logout()">Logout</button>
-      </div>
-      <div class="header-login" ng-if="!authData">
+  <body ng-class="{ 'loginScreen': !authData  }" ng-controller="ListyCtrl">
+    
+    <!-------- Login Screen -------->
+    <div ng-if="!authData">
+      <section class="home-screen">
+        <img class="home-screen-logo" src="images/logo.png">
         <button class="login" ng-click="login()">Login with Google</button>
+      </section>
+    </div>
+
+
+    <!-------- Main App -------->
+    <nav ng-if="authData">
+      <img class="header-logo" src="images/logo.png" />
+      <div class="header-login" >
+        <a>Hello {{authData.google.displayName}}</a>
+        <button class="logout" ng-click="logout()">Logout</button>
       </div>
     </nav>
 

@@ -1,0 +1,24 @@
+html { height: 100%; }
+
+.home-screen {
+	  text-align: center;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  flex: 1;
+	.home-screen-logo {
+		width: 200px;
+		margin-bottom: 30px;
+	}
+}
+
+.loginScreen {
+	background-color: $listy-main;
+	display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+

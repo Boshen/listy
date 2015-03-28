@@ -1,4 +1,4 @@
-.login {
+.logout {
   background-color: darken($listy-main, 7%);
   border: none;
   border-radius: 5px;
@@ -9,4 +9,10 @@
   font-family: 'Ubuntu', 'Arial', sans-serif;
   cursor: pointer;
   margin-left: 15px;
+}
+
+.login {
+  @extend .logout;
+  padding: 25px 50px;
+  font-size: 24px;
 }
