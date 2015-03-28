@@ -15,11 +15,11 @@
     <nav>
       <img class="header-logo" src="images/logo.png" />
       <div class="header-login" ng-if="authData">
-        <a>{{authData.google.displayName}}</a>
-        <button ng-click="logout()">Logout</button>
+        <a>Hello {{authData.google.displayName}}</a>
+        <button class="login" ng-click="logout()">Logout</button>
       </div>
       <div class="header-login" ng-if="!authData">
-        <button ng-click="login()">Login</button>
+        <button class="login" ng-click="login()">Login with Google</button>
       </div>
     </nav>
 
