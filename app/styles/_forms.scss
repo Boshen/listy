@@ -9,6 +9,11 @@
   font-family: 'Ubuntu', 'Arial', sans-serif;
   cursor: pointer;
   margin-left: 15px;
+
+  &:hover {
+    background-color: darken($listy-main, 13%);
+  }
+
 }
 
 .login {
