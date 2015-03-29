@@ -5,6 +5,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  position: relative;
 
   .header-logo {
     height: 40px;
@@ -16,4 +17,19 @@ nav {
     align-items: center;
   }
 
+  .dd-menu {
+    position: absolute;
+    right: 20px;
+    bottom: -59px;
+    background-color: $background-gray;
+  }
+
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
 }

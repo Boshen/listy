@@ -54,6 +54,8 @@
         $scope.todos.$save(todo);
       };
 
+      
+
       $scope.displayName = function() {
         return $scope.authData.google.cachedUserProfile.given_name;
       };
