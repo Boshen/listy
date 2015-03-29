@@ -83,13 +83,13 @@ html {
     background-color: $background-gray;
     flex: 1 1 auto;
     outline: none;
-  
+
     &:hover {
       outline: 0;
-    }    
+    }
 
   }
-  
+
   .todo-check {
     border: 4px solid $listy-light-gray;
     background-size: 20px 20px;
@@ -97,7 +97,9 @@ html {
     height: 30px;
     cursor: pointer;
     margin-right: 20px;
+    margin-top: 7px;
     border-radius: 5px;
+    align-self: flex-start;
 
     &:hover {
       border-color: $listy-main;
