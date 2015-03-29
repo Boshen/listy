@@ -17,11 +17,17 @@
 
     .service('TodosService', function($firebaseArray) {
       return function(ref, userId) {
-        return $firebaseArray(ref.child('users').child(userId).child('todos'));
+        var todosRef =
+          ref.child('users')
+            .child(userId)
+            .child('todos')
+            .orderByPriority();
+        return $firebaseArray(todosRef);
+
       };
     })
 
-    .controller('ListyCtrl', function($scope, AuthFactory, TodosService) {
+    .controller('ListyCtrl', function($scope, $window, AuthFactory, TodosService) {
 
       $scope.authData = null;
       $scope.newTodo = null;
@@ -35,7 +41,11 @@
       $scope.logout = AuthFactory.logout;
 
       $scope.addTodo = function() {
-        $scope.todos.$add({text: $scope.newTodo.text, checked: false});
+        $scope.todos.$add({
+          text: $scope.newTodo.text,
+          checked: false,
+          $priority: -$window.Date.now()
+        });
         clearNewTodo();
       };
 
