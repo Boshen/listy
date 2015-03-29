@@ -2,6 +2,8 @@
 
   angular.module('listy', ['firebase', 'monospaced.elastic'])
 
+    .constant('TWODAYS', 48 * 60 * 60 * 1000)
+
     .factory('AuthFactory', function($window, $firebaseAuth) {
       var service = {};
       service.ref = new $window.Firebase('https://listy-app.firebaseio.com');
@@ -15,19 +17,19 @@
       return service;
     })
 
-    .service('TodosService', function($firebaseArray) {
+    .service('TodosService', function($window, $firebaseArray, TWODAYS) {
       return function(ref, userId) {
         var todosRef =
           ref.child('users')
             .child(userId)
             .child('todos')
-            .orderByPriority();
+            .orderByPriority()
+            .endAt(-$window.Date.now() + TWODAYS);
         return $firebaseArray(todosRef);
-
       };
     })
 
-    .controller('ListyCtrl', function($scope, $window, AuthFactory, TodosService) {
+    .controller('ListyCtrl', function($scope, $window, AuthFactory, TodosService, $interval, TWODAYS) {
 
       $scope.authData = null;
       $scope.newTodo = null;
@@ -54,8 +56,6 @@
         $scope.todos.$save(todo);
       };
 
-      
-
       $scope.displayName = function() {
         return $scope.authData.google.cachedUserProfile.given_name;
       };
@@ -63,6 +63,15 @@
       $scope.profilePic = function() {
         return $scope.authData.google.cachedUserProfile.picture;
       };
+
+      var stopInterval = $interval(function(){
+        var hasOutdated = $scope.todos.some(function(todo) {
+          return $window.Date.now() + todo.$priority > TWODAYS;
+        });
+        if (hasOutdated) {
+          $scope.todos = new TodosService(AuthFactory.ref, $scope.authData.uid);
+        }
+      }, 1000 * 60);
 
       function clearNewTodo() {
         $scope.newTodo = {text: ''};
@@ -86,6 +95,10 @@
       };
 
       init();
+
+      $scope.$on('$destroy', function() {
+        stopInterval();
+      });
 
     });
 
