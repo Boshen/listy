@@ -58,6 +58,10 @@
         return $scope.authData.google.cachedUserProfile.given_name;
       };
 
+      $scope.profilePic = function() {
+        return $scope.authData.google.cachedUserProfile.picture;
+      };
+
       function clearNewTodo() {
         $scope.newTodo = {text: ''};
       };
