@@ -43,12 +43,14 @@
       $scope.logout = AuthFactory.logout;
 
       $scope.addTodo = function() {
-        $scope.todos.$add({
-          text: $scope.newTodo.text,
-          checked: false,
-          $priority: -$window.Date.now()
-        });
-        clearNewTodo();
+        if ($scope.newTodo.text.length > 1) {
+          $scope.todos.$add({
+            text: $scope.newTodo.text,
+            checked: false,
+            $priority: -$window.Date.now()
+          });
+          clearNewTodo();
+        }
       };
 
       $scope.checkTodo = function(todo) {
