@@ -5,7 +5,6 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  position: relative;
 
   .header-logo {
     height: 40px;
@@ -15,13 +14,38 @@ nav {
     color: #fff;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: visible;
   }
 
-  .dd-menu {
+  .dropdown {
     position: absolute;
-    right: 20px;
-    bottom: -59px;
-    background-color: $background-gray;
+    right: 1px;
+    bottom: -70px;
+    background-color: #000;
+    padding: 9px 0px;
+    border-radius: 3px;
+    a {
+      display: block;
+      padding: 10px 36px;
+    }
+  }
+
+  .dropdown:before {
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: rgb(0, 0, 0) transparent;
+    border-width: 0 .5em 11px;
+    bottom: 54px;
+    content: "";
+    display: block;
+    left: 99.5px;
+    position: absolute;
+    z-index: 99;
   }
 
 }

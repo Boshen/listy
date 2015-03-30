@@ -29,9 +29,9 @@
       <div class="header-login" >
         <a>Hi {{displayName()}}</a>
         <img ng-click="isActive = !isActive" ng-init="isActive = false" class="profile-photo" ng-src="{{profilePic()}}" />
-      </div>
-      <div ng-class="{'hide': !isActive, 'show': isActive}" class="dd-menu">
-        <a ng-click="logout()">Logout</a>
+        <div class="dropdown" ng-class="{'hide': !isActive, 'show': isActive}" class="dd-menu">
+          <a ng-click="logout()">Logout</a>
+        </div>
       </div>
     </nav>
 
