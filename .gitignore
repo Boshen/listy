@@ -1,5 +1,5 @@
 node_modules
-bower_components
+components
 .sass-cache
 .tmp
 .DS_Store
