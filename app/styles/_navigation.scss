@@ -25,9 +25,17 @@ nav {
     background-color: #000;
     padding: 9px 0px;
     border-radius: 3px;
+    background-color: #fff;
+    
     a {
       display: block;
       padding: 10px 36px;
+      cursor: pointer;
+      color: black;
+      
+      &:hover {
+        color: $listy-main;
+      }
     }
   }
 
@@ -38,7 +46,7 @@ nav {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     border-image: none;
-    border-color: rgb(0, 0, 0) transparent;
+    border-color: #fff transparent;
     border-width: 0 .5em 11px;
     bottom: 54px;
     content: "";
