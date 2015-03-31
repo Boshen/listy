@@ -22,5 +22,8 @@
     "grunt-contrib-watch": "^0.6.1",
     "jit-grunt": "^0.9.1",
     "angular-elastic": "*"
+  },
+  "dependencies": {
+    "angular-route": "^1.3.15"
   }
 }

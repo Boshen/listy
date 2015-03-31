@@ -1,0 +1,31 @@
+<nav ng-if="authData">
+  <img class="header-logo" src="images/logo.png" />
+  <div class="header-login" >
+    <a>Hi {{displayName()}}</a>
+    <img ng-click="isActive = !isActive" ng-init="isActive = false" class="profile-photo" ng-src="{{profilePic()}}" />
+    <div class="dropdown" ng-class="{'hide': !isActive, 'show': isActive}" class="dd-menu">
+      <a ng-click="logout()">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<main class="todo-main" ng-if="authData">
+<section class="todo-section">
+  <ul>
+    <li class="todo-input-area">
+    <form ng-submit="addTodo()">
+      <div class="list-input">
+        <input type="text" placeholder='I need to...' ng-model="newTodo.text"></input>
+      </div>
+    </form>
+    </li>
+    <li class="todo-text-area" ng-repeat="todo in todos track by todo.$id">
+    <div class="todo-text-container">
+      <span ng-click="checkTodo(todo)" ng-class="{'checked': todo.checked}" class="todo-check"></span>
+      <textarea ng-class="{'blue' : todo.checked}" msd-elastic rows="1" class="todo-item msd-elastic" ng-model="todo.text" ng-change="todos.$save(todo)"></textarea>
+      <span class="todo-delete" ng-click="todos.$remove(todo)"></span>
+    </div>
+    </li>
+  </ul>
+</section>
+</main>

@@ -1,21 +1,22 @@
 (function() {
+  'use strict';
 
-  angular.module('listy', ['firebase', 'monospaced.elastic'])
+  angular.module('listy.todos', ['ngRoute', 'firebase', 'monospaced.elastic'])
+
+    .config(function($routeProvider) {
+      return $routeProvider.when('/todos', {
+        templateUrl: 'controllers/todos/todos.html',
+        controller: 'TodosCtrl',
+        reloadOnSearch: false,
+        resolve: {
+          user: ['Auth', function (Auth) {
+            return Auth.$waitForAuth();
+          }]
+        }
+      });
+    })
 
     .constant('TWODAYS', 48 * 60 * 60 * 1000)
-
-    .factory('AuthFactory', function($window, $firebaseAuth) {
-      var service = {};
-      service.ref = new $window.Firebase('https://listy-app.firebaseio.com');
-      service.auth = $firebaseAuth(service.ref);
-      service.login = function() {
-        return service.auth.$authWithOAuthPopup('google');
-      };
-      service.logout = function() {
-        service.auth.$unauth();
-      };
-      return service;
-    })
 
     .service('TodosService', function($window, $firebaseArray, TWODAYS) {
       return function(ref, userId) {
@@ -29,7 +30,7 @@
       };
     })
 
-    .controller('ListyCtrl', function($scope, $window, AuthFactory, TodosService, $interval, TWODAYS) {
+    .controller('TodosCtrl', function($scope, $window, AyuthFactory, TodosService, $interval, TWODAYS) {
 
       $scope.authData = null;
       $scope.newTodo = null;
@@ -104,4 +105,4 @@
 
     });
 
-}).call(this);
+}).call(angular);
