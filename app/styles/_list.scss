@@ -111,14 +111,14 @@ html {
   .checked {
     background-color: $listy-main;
     border-color: $listy-main;
-    background: url('/images/tick.png') no-repeat center center $listy-main;
+    background: url('../images/tick.png') no-repeat center center $listy-main;
     background-size: 16px 13px;
   }
 
 
 
   .todo-delete {
-    background: url('/images/icon-close.png') no-repeat center center transparent;
+    background: url('../images/icon-close.png') no-repeat center center transparent;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;

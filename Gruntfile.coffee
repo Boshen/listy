@@ -40,11 +40,11 @@ module.exports = (grunt) ->
       options:
         sassDir: 'app/styles'
         cssDir: '.tmp/styles'
-        imagesDir: 'images'
+        imagesDir: 'images/'
       dist:
         options:
-          relativeAssets: true
           debugInfo: false
+          relativeAssets: true
           environment: 'production'
       server:
         options:
