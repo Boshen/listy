@@ -70,9 +70,15 @@ module.exports = (grunt) ->
             cwd: 'app'
             dest: 'dist'
             src: [
-              '**/*.js'
-              '**/*.png'
+              'app.js'
+              'images/*.png'
+              'favicon.ico'
               'index.html'
+              "components/angular/angular.min.js"
+              "components/angular/angular.min.js.map"
+              "components/angular-elastic/elastic.js"
+              "components/firebase/firebase.js"
+              "components/angularfire/dist/angularfire.min.js"
             ]
         }]
 
