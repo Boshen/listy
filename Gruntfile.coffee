@@ -50,6 +50,7 @@ module.exports = (grunt) ->
         options:
           debugInfo: true
           relativeAssets: false
+          environment: 'development'
 
     autoprefixer:
       options:
