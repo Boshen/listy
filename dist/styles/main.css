@@ -63,19 +63,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_resets\.scss}line{font-family:\000031}}
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_structure\.scss}line{font-family:\000031}}
 body {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   font-family: 'Ubuntu', 'Arial', sans-serif;
   font-weight: 300;
   font-size: 18px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_structure\.scss}line{font-family:\000038}}
-.container {
-  width: 700px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_navigation\.scss}line{font-family:\000031}}
@@ -103,45 +101,131 @@ nav .header-logo {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_navigation\.scss}line{font-family:\0000313}}
 nav .header-login {
   color: #fff;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\000031}}
-.todo-main {
-  font-size: 18px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\000035}}
-.todo-section {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 100px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: visible;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\000039}}
-.todo-section ul {
-  width: 100%;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_navigation\.scss}line{font-family:\0000321}}
+nav .dropdown {
+  position: absolute;
+  right: 1px;
+  bottom: -70px;
+  background-color: #000;
+  padding: 9px 0px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_navigation\.scss}line{font-family:\0000330}}
+nav .dropdown a {
+  display: block;
+  padding: 10px 36px;
+  cursor: pointer;
+  color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_navigation\.scss}line{font-family:\0000336}}
+nav .dropdown a:hover {
+  color: #2ebf9f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_navigation\.scss}line{font-family:\0000342}}
+nav .dropdown:before {
+  border-style: solid;
+  -moz-border-top-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -webkit-border-image: none;
+          border-image: none;
+  border-color: #fff transparent;
+  border-width: 0 .5em 11px;
+  bottom: 54px;
+  content: "";
+  display: block;
+  left: 99.5px;
+  position: absolute;
+  z-index: 99;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_navigation\.scss}line{font-family:\0000361}}
+.hide {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_navigation\.scss}line{font-family:\0000365}}
+.show {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\000031}}
+html {
+  box-sizing: border-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\000034}}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\000038}}
+.todo-main {
+  font-size: 18px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000315}}
+.todo-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 900px;
+  width: 80%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000321}}
+.todo-section ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000327}}
 .list-input {
   padding: 20px;
-  margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000330}}
 .list-input input {
   width: 100%;
   padding: 20px;
   outline: 0;
   border-radius: 6px;
-  border: 4px solid #E6E6E6;
+  border: 4px solid #e6e6e6;
   font-size: 22px;
   font-family: 'Ubuntu', 'Arial', sans-serif;
   font-weight: 300;
   font-size: 28px;
-  box-sizing: border-box;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000341}}
 .list-input input::-webkit-input-placeholder {
   font-family: 'Ubuntu', 'Arial', sans-serif;
   font-weight: 300;
@@ -166,12 +250,12 @@ nav .header-login {
   font-size: 28px;
   color: #E6E6E6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000348}}
 .list-input input:hover, .list-input input:focus {
   border: 4px solid #2ebf9f;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000356}}
 ::-moz-selection {
   background: #2ebf9f;
   color: #fff;
@@ -181,7 +265,11 @@ nav .header-login {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000361}}
+.todo-text-area {
+  padding: 20px 20px 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000364}}
 .todo-text-area .todo-text-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -191,22 +279,174 @@ nav .header-login {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 4px solid #f9f9f9;
+  border-radius: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000372}}
+.todo-text-area .todo-text-container:hover .todo-delete {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000379}}
 .todo-text-area .todo-item {
   font-weight: 700;
   color: #858585;
-  font-size: 35px;
-  width: 90%;
+  font-size: 32px;
+  font-family: 'Ubuntu', 'Arial', sans-serif;
+  border: 0;
+  background-color: #f9f9f9;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  outline: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000389}}
+.todo-text-area .todo-item:hover {
+  outline: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\0000395}}
+.todo-text-area .todo-check {
+  border: 4px solid #e6e6e6;
+  background-size: 20px 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 7px;
+  border-radius: 5px;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\00003106}}
+.todo-text-area .todo-check:hover {
+  border-color: #2ebf9f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\00003111}}
+.todo-text-area .checked {
+  background-color: #2ebf9f;
+  border-color: #2ebf9f;
+  background: url("/images/tick.png") no-repeat center center #2ebf9f;
+  background-size: 16px 13px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\00003120}}
 .todo-text-area .todo-delete {
   background: url("/images/icon-close.png") no-repeat center center transparent;
   background-size: 20px 20px;
   width: 20px;
   height: 20px;
-  display: inline-block;
-  width: 10%;
   cursor: pointer;
+  opacity: 0;
+  margin-left: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\00003131}}
+textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_list\.scss}line{font-family:\00003136}}
+.blue {
+  text-decoration: line-through;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_forms\.scss}line{font-family:\000031}}
+.logout, .login {
+  background-color: #27a287;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Ubuntu', 'Arial', sans-serif;
+  cursor: pointer;
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_forms\.scss}line{font-family:\0000313}}
+.logout:hover, .login:hover {
+  background-color: #218a73;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_forms\.scss}line{font-family:\0000319}}
+.login {
+  padding: 25px 50px;
+  font-size: 24px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_login\.scss}line{font-family:\000031}}
+html {
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_login\.scss}line{font-family:\000033}}
+.home-screen {
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_login\.scss}line{font-family:\0000310}}
+.home-screen .home-screen-logo {
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_login\.scss}line{font-family:\0000316}}
+.loginScreen {
+  background-color: #2ebf9f;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_login\.scss}line{font-family:\0000325}}
+.profile-photo {
+  height: 45px;
+  border-radius: 6px;
+  margin-left: 15px;
+  border: 3px solid #2aaf91;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/boshen\/github\/listy\/app\/styles\/_login\.scss}line{font-family:\0000332}}
+.profile-photo:hover {
+  border-color: #24967d;
 }

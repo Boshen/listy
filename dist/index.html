@@ -2,36 +2,51 @@
 <html lang="en" ng-app="listy">
 
   <head>
-    <meta charset="utf-8">
     <title>Listy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
   </head>
 
-  <body>
-    <nav>
+  <body ng-class="{ 'loginScreen': !authData  }" ng-controller="ListyCtrl">
+
+    <!-------- Login Screen -------->
+    <div ng-if="!authData">
+      <section class="home-screen">
+        <img class="home-screen-logo" src="images/logo.png">
+        <button class="login" ng-click="login()">Login with Google</button>
+      </section>
+    </div>
+
+
+    <!-------- Main App -------->
+    <nav ng-if="authData">
       <img class="header-logo" src="images/logo.png" />
-      <div class="header-login">
-        <a>Hey Boshen</a>
+      <div class="header-login" >
+        <a>Hi {{displayName()}}</a>
+        <img ng-click="isActive = !isActive" ng-init="isActive = false" class="profile-photo" ng-src="{{profilePic()}}" />
+        <div class="dropdown" ng-class="{'hide': !isActive, 'show': isActive}" class="dd-menu">
+          <a ng-click="logout()">Logout</a>
+        </div>
       </div>
     </nav>
 
-    <main class="container todo-main" ng-controller="ListyCtrl">
+    <main class="todo-main" ng-if="authData">
       <section class="todo-section">
         <ul>
           <li class="todo-input-area">
-            <form ng-submit="addTodo(newTodo.text)">
+            <form ng-submit="addTodo()">
               <div class="list-input">
-                <input placeholder='I need to...' ng-model="newTodo.text"></input>
+                <input type="text" placeholder='I need to...' ng-model="newTodo.text"></input>
               </div>
             </form>
           </li>
           <li class="todo-text-area" ng-repeat="todo in todos track by todo.$id">
             <div class="todo-text-container">
-              <span class="todo-item"> {{todo.text}} </span>
+              <span ng-click="checkTodo(todo)" ng-class="{'checked': todo.checked}" class="todo-check"></span>
+              <textarea ng-class="{'blue' : todo.checked}" msd-elastic rows="1" class="todo-item msd-elastic" ng-model="todo.text" ng-change="todos.$save(todo)"></textarea>
               <span class="todo-delete" ng-click="todos.$remove(todo)"></span>
             </div>
           </li>
@@ -39,6 +54,10 @@
       </section>
     </main>
 
+    <script src="components/angular/angular.min.js"></script>
+    <script src="components/angular-elastic/elastic.js"></script>
+    <script src="components/firebase/firebase.js"></script>
+    <script src="components/angularfire/dist/angularfire.min.js"></script>
     <script src="app.js"></script>
 
   </body>
