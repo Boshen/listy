@@ -39,9 +39,13 @@ module.exports = (grunt) ->
     compass:
       options:
         sassDir: 'app/styles'
-        relativeAssets: true
         cssDir: '.tmp/styles'
-      dist: {}
+        imagesDir: 'images'
+      dist:
+        options:
+          relativeAssets: true
+          debugInfo: false
+          environment: 'production'
       server:
         options:
           debugInfo: true
