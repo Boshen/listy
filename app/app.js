@@ -4,7 +4,7 @@
 
     .constant('TWODAYS', 48 * 60 * 60 * 1000)
 
-    .factory('AuthFactory', function($window, $firebaseAuth) {
+    .factory('AuthFactory', ['$window', '$firebaseAuth', function($window, $firebaseAuth) {
       var service = {};
       service.ref = new $window.Firebase('https://listy-app.firebaseio.com');
       service.auth = $firebaseAuth(service.ref);
@@ -15,9 +15,9 @@
         service.auth.$unauth();
       };
       return service;
-    })
+    }])
 
-    .service('TodosService', function($window, $firebaseArray, TWODAYS) {
+    .service('TodosService', ['$window', '$firebaseArray', 'TWODAYS', function($window, $firebaseArray, TWODAYS) {
       return function(ref, userId) {
         var todosRef =
           ref.child('users')
@@ -27,9 +27,9 @@
             .endAt(-$window.Date.now() + TWODAYS);
         return $firebaseArray(todosRef);
       };
-    })
+    }])
 
-    .controller('ListyCtrl', function($scope, $window, AuthFactory, TodosService, $interval, TWODAYS) {
+    .controller('ListyCtrl', ['$scope', '$window', 'AuthFactory', 'TodosService', '$interval', 'TWODAYS', function($scope, $window, AuthFactory, TodosService, $interval, TWODAYS) {
 
       $scope.authData = null;
       $scope.newTodo = null;
@@ -102,6 +102,6 @@
         stopInterval();
       });
 
-    });
+    }]);
 
 }).call(this);

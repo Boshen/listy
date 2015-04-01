@@ -91,7 +91,7 @@ module.exports = (grunt) ->
         }]
 
     useminPrepare:
-      html: 'dist/index.html'
+      html: 'app/index.html'
       options:
         dest: 'dist'
         flow:
@@ -110,8 +110,8 @@ module.exports = (grunt) ->
           mangle: true
           preserveComments: 'some'
         files: [{
-            src: '.tmp/concat/scripts/scripts.js'
-            dest: 'dist/scripts/scripts.js'
+          src: '.tmp/concat/scripts/scripts.js'
+          dest: 'dist/scripts/scripts.js'
         }]
 
     filerev:
@@ -121,6 +121,17 @@ module.exports = (grunt) ->
           'dist/styles/main.css'
           'dist/images/*.png'
         ]
+
+    ngAnnotate:
+      options:
+        singleQuotes: true
+      app:
+        files: [{
+          expand: true
+          cwd: 'app'
+          src: '**/*.js'
+          dest: 'app'
+        }]
 
   grunt.registerTask 'server', [
     'compass:server'
@@ -134,6 +145,7 @@ module.exports = (grunt) ->
     'compass:dist'
     'autoprefixer:dist'
     'copy'
+    'ngAnnotate'
     'useminPrepare'
     'concat:generated'
     'uglify:generated'
