@@ -70,6 +70,9 @@ module.exports = (grunt) ->
           dest: '.tmp/styles/'
         }]
 
+    clean:
+      app: ['dist/']
+
     concat:
       options:
         process: (src, filepath) ->
@@ -77,28 +80,47 @@ module.exports = (grunt) ->
     copy:
       all:
         files: [{
-            expand: true
-            cwd: 'app'
-            dest: 'dist'
-            src: [
-              'images/*.png'
-              'favicon.ico'
-              'index.html'
-            ]
+          expand: true
+          cwd: 'app'
+          dest: 'dist'
+          src: [
+            'images/*.png'
+            'favicon.ico'
+            'index.html'
+          ]
         }]
 
     useminPrepare:
-      html: 'app/index.html'
+      html: 'dist/index.html'
       options:
         dest: 'dist'
         flow:
           html:
             steps:
-              js: ['concat']
+              js: ['concat', 'uglifyjs']
             post: {}
 
     usemin:
       html: ['dist/index.html']
+      css: ['dist/styles/*.css']
+
+    uglify:
+      scripts:
+        options:
+          mangle: true
+          preserveComments: 'some'
+        files: [{
+            src: '.tmp/concat/scripts/scripts.js'
+            dest: 'dist/scripts/scripts.js'
+        }]
+
+    filerev:
+      dist:
+        src: [
+          'dist/scripts/*.js'
+          'dist/styles/main.css'
+          'dist/images/*.png'
+        ]
 
   grunt.registerTask 'server', [
     'compass:server'
@@ -108,11 +130,14 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'build', [
+    'clean'
     'compass:dist'
     'autoprefixer:dist'
     'copy'
     'useminPrepare'
     'concat:generated'
+    'uglify:generated'
+    'filerev'
     'usemin'
   ]
 
