@@ -67,11 +67,13 @@
       };
 
       var stopInterval = $interval(function(){
-        var hasOutdated = $scope.todos.some(function(todo) {
-          return $window.Date.now() + todo.$priority > TWODAYS;
-        });
-        if (hasOutdated) {
-          $scope.todos = new TodosService(AuthFactory.ref, $scope.authData.uid);
+        if ($scope.todos) {
+          var hasOutdated = $scope.todos.some(function(todo) {
+            return $window.Date.now() + todo.$priority > TWODAYS;
+          });
+          if (hasOutdated) {
+            $scope.todos = new TodosService(AuthFactory.ref, $scope.authData.uid);
+          }
         }
       }, 1000 * 60);
 
