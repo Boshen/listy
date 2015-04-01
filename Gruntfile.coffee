@@ -87,6 +87,7 @@ module.exports = (grunt) ->
             'images/*.png'
             'favicon.ico'
             'index.html'
+            'CNAME'
           ]
         }]
 
