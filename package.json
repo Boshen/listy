@@ -14,13 +14,15 @@
   },
   "homepage": "https://github.com/Boshen/listy",
   "devDependencies": {
+    "angular-elastic": "*",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.2.0",
     "grunt-browser-sync": "^2.1.1",
     "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-watch": "^0.6.1",
-    "jit-grunt": "^0.9.1",
-    "angular-elastic": "*"
+    "grunt-usemin": "^3.0.0",
+    "jit-grunt": "^0.9.1"
   }
 }

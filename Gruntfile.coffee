@@ -1,7 +1,9 @@
 'use strict'
 module.exports = (grunt) ->
 
-  require('jit-grunt')(grunt)
+  require('jit-grunt')(grunt, {
+    useminPrepare: 'grunt-usemin'
+  })
 
   grunt.initConfig
 
@@ -63,6 +65,10 @@ module.exports = (grunt) ->
           dest: '.tmp/styles/'
         }]
 
+    concat:
+      options:
+        process: (src, filepath) ->
+          src.replace /\/\/(.*)sourceMappingURL(.*)/g, '' # remove all source maps
     copy:
       all:
         files: [{
@@ -70,17 +76,24 @@ module.exports = (grunt) ->
             cwd: 'app'
             dest: 'dist'
             src: [
-              'app.js'
               'images/*.png'
               'favicon.ico'
               'index.html'
-              "components/angular/angular.min.js"
-              "components/angular/angular.min.js.map"
-              "components/angular-elastic/elastic.js"
-              "components/firebase/firebase.js"
-              "components/angularfire/dist/angularfire.min.js"
             ]
         }]
+
+    useminPrepare:
+      html: 'app/index.html'
+      options:
+        dest: 'dist'
+        flow:
+          html:
+            steps:
+              js: ['concat']
+            post: {}
+
+    usemin:
+      html: ['dist/index.html']
 
   grunt.registerTask 'server', [
     'compass:server'
@@ -93,6 +106,9 @@ module.exports = (grunt) ->
     'compass:dist'
     'autoprefixer:dist'
     'copy'
+    'useminPrepare'
+    'concat:generated'
+    'usemin'
   ]
 
   grunt.registerTask 'default', ['server']
